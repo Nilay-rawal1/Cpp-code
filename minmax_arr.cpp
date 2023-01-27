@@ -1,8 +1,9 @@
 #include<iostream>
+
 using namespace std;
 
 int getmax(int num[],int n){
-    int maxi= INT32_MIN;
+    int maxi= INT8_MIN;
     for (int i = 0; i < n; i++)
     {
       /**/  if (num[i]>maxi)
