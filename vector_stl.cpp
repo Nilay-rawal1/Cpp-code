@@ -1,5 +1,6 @@
 //vector is dynamic array (size manipuation )
-
+// it is dynamic array. can change it's size as per requriment 
+  
 #include<iostream>
 #include<vector>
 
