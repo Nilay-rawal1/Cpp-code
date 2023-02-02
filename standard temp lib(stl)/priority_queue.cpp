@@ -1,7 +1,7 @@
 #include<iostream>
 #include<queue>
 using namespace std;
-
+//priority queue
 int main(){
     //max heap
     priority_queue<int> maxi;
@@ -17,6 +17,7 @@ int main(){
     int n=maxi.size();
     for (int i = 0; i < n; i++)
     {
+
         cout<<maxi.top()<<" ";
         maxi.pop();
     }
