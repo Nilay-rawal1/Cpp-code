@@ -24,7 +24,7 @@ int main()
     it++;
     s.erase(it);
     for (auto i : s)
-    {
+    { //auto fuction
         cout << i << endl;
     }
     cout << endl;
