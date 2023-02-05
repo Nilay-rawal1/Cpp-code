@@ -1,6 +1,4 @@
-#include<iostream>
-#include<algorithm>
-#include<vector>
+#include<bits/stdc++.h>
 // different algos using stl (#include<algorithm>)
 using namespace std;
 
