@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 /// check pallindrome of string 
-bool checkp(char a[],char b[],int n ){  
+bool checkp(char a[],int n ){  
     int s=0;
     int e=n-1;
     while(s<=e){
@@ -51,7 +51,7 @@ int main(){
     reverses(name,len);
     cout<<"Your name in reverse :"<<name ;
    bool ck=checkp(name, len);
-    cout<<"Palindrome or not"<<ck<<endl;
+    cout<<"Palindrome or not "<<ck<<endl;
 return 0;
 
 }
