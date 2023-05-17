@@ -9,7 +9,7 @@ int main(){
     v.push_back(6);
     v.push_back(7);
     cout<<"element exist -> "<<binary_search(v.begin(),v.end(),6)<<endl;
-
+    
     int a=3, b=5;
     cout<<"max element "<<max(a,b)<<endl;
     cout<<"min element "<<min(a,b)<<endl;
