@@ -1,5 +1,7 @@
 // LeetCode problem:204:- Count Prime numbers,
 // with time complexicity of o(log(log(n))
+#include<bits/stdc++.h>
+using namespace std;
 class Solution {
 public:
     int countPrimes(int n) {
