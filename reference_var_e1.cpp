@@ -4,7 +4,13 @@ using namespace std;
 void update(int a ){
     a++;
 }
+//pass by refernence 
+/*same memory but different names
 
+
+int& update()
+-> bad practice ,koi change karde toh
+*/
 
 
 
