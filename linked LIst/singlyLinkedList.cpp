@@ -12,6 +12,16 @@ public:
         this->data = data;
         this->next = NULL;
     }
+    //destructor
+    ~Node(){
+        int value= this-> data;
+        if(this->next !=NULL){
+            delete next;
+            this->next=NULL;
+        }
+
+        cout<<"memory is free for this "<<value<<endl;
+    }
 };
 
 // insert at tail ()
@@ -58,6 +68,36 @@ void InsertAtPosition(Node *&tail, Node *&head, int position, int d)
     nodeToInsert->next = temp->next;
     temp->next = nodeToInsert;
 }
+
+//delete function
+void deleteNode(int position, Node *& head){
+    if(position==1){
+        //deleting first node
+        Node * temp=head;
+        head=head-> next;
+        temp-> next=NULL;
+        delete temp;
+    }
+    else{
+        //deleting any middle and last node
+       Node* curr = head;
+        Node* prev = NULL;
+
+        int cnt = 1;
+        while(cnt < position) {
+            prev = curr;
+            curr = curr -> next;
+            cnt++;
+        }
+
+        prev -> next = curr -> next;
+        curr -> next  = NULL;
+        delete curr;
+
+        
+    }
+
+}
 // traversing and printing
 
 void Print(Node *&head)
@@ -94,8 +134,10 @@ int main()
     Print(head);
     InsertAtPosition(tail, head, 1, 22);
     Print(head);
-    InsertAtPosition(tail, head, 4, 24);
     Print(head);
+    deleteNode(3,head);
+    Print(head);
+
 
     return 0;
 }
