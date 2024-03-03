@@ -17,11 +17,19 @@ public:
     }
 };
 //insestion at head
-void insertAtHead(Node* &head ,int d){
+void insertAtHead(Node* &tail,Node* &head ,int d){
+    // if list is empty
+    if(head==NULL){
+        Node* temp=new Node(d);
+        head=temp;
+        tail=temp;
+    }
+    else{ 
     Node* temp =new Node(d);
     temp-> next=head;
     head->prev=temp;
     head=temp;
+    }
 }
 //traversing
 void print(Node *head)
@@ -46,16 +54,24 @@ int getlength(Node* head){
     }
    return len;
 }
-void insertAtTail(Node* &tail,int d){
-     Node* temp =new Node(d);
+void insertAtTail(Node* &tail, Node * &head,int d){
+    // 
+    if(tail==NULL){
+        Node *temp=new Node(d);
+        tail=temp;
+        head=temp;
+    }
+    else{
+    Node* temp =new Node(d);
      tail->next=temp;
      temp->prev=tail;
      tail =temp;
+    }
 }
 
 void insertAtPostion(Node* &tail,Node* &head,int position,int d){
     if(position==1){
-        insertAtHead(head,d);
+        insertAtHead(tail,head,d);
         return ;
     }
     Node* temp=head;
@@ -67,7 +83,7 @@ void insertAtPostion(Node* &tail,Node* &head,int position,int d){
     }
     //insertion at last position
     if(temp->next==NULL){
-        insertAtTail(tail,d);
+        insertAtTail(head,tail,d);
         return ;
     }
     //creating a node for d
@@ -87,15 +103,15 @@ int main()
     Node *tail=node1;
     print(head);
     cout<<getlength(head)<<endl;
-    insertAtHead(head,11);
+    insertAtHead(tail,head,11);
      print(head);
-     insertAtHead(head,12);
+     insertAtHead(tail,head,12);
      print(head);
-     insertAtHead(head,13);
+     insertAtHead(tail,head,13);
      print(head);
 cout<<getlength(head)<<endl;
 
-    insertAtTail(tail,45);
+    insertAtTail(head,tail,45);
     print(head);
 
     insertAtPostion(tail,head,2,100);
