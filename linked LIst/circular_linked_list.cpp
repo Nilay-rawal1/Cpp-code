@@ -59,6 +59,7 @@ void print(Node* tail){
         cout<<tail->data<<" ";
         tail=tail->next;
     } while (tail!=temp);
+    cout<<endl;
     
 
     
@@ -77,6 +78,8 @@ int main(){
     Node* tail=NULL;
 //epmty list me insert krre hai
     InsertNode(tail,5,3);
+    print(tail);
+    InsertNode(tail,3,5);
     print(tail);
 
     return 0;
