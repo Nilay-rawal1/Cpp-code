@@ -3,13 +3,12 @@ using namespace std;
 
 class Node
 {
-
 public:
     int data;
     Node *left;
     Node *right;
-    // constructor
 
+    // constructor
     Node(int d)
     {
         this->data = d;
@@ -17,7 +16,8 @@ public:
         this->right = NULL;
     }
 };
-void levelOrdertraversal(Node *root)
+
+void levelOrderTraversal(Node *root)
 {
     queue<Node *> q;
     q.push(root);
@@ -30,11 +30,11 @@ void levelOrdertraversal(Node *root)
 
         if (temp == NULL)
         {
-            // purana level complete traverse ho chuka hai
+            // Purana level complete traverse ho chuka hai
             cout << endl;
             if (!q.empty())
             {
-                // queue still has some child ndoes
+                // Queue still has some child nodes
                 q.push(NULL);
             }
         }
@@ -54,10 +54,12 @@ void levelOrdertraversal(Node *root)
     }
 }
 
+
+//in Order, Pre Order and Post Order
+//void fucntions taking from binary tree wala question
 Node *insertInBST(Node *&root, int d)
 {
     // base case
-
     if (root == NULL)
     {
         root = new Node(d);
@@ -65,13 +67,12 @@ Node *insertInBST(Node *&root, int d)
     }
     if (d > root->data)
     {
-        // right part me insert karna hai
-
+        // Right part me insert karna hai
         root->right = insertInBST(root->right, d);
     }
     else
     {
-        // left part me insert karna hai
+        // Left part me insert karna hai
         root->left = insertInBST(root->left, d);
     }
     return root;
@@ -85,18 +86,18 @@ void takeInput(Node *&root)
     while (data != -1)
     {
         insertInBST(root, data);
+        cin >> data; // This needs to be inside the loop to read new data.
     }
 }
 
 int main()
 {
-
     Node *root = NULL;
-    cout << "enter data to creat BST:" << endl;
+    cout << "Enter data to create BST (end input with -1):" << endl;
 
     takeInput(root);
-    cout<<"Printing the BST:"<<endl;
-    levelOrdertraversal(root);
+    cout << "Printing the BST:" << endl;
+    levelOrderTraversal(root);
 
     return 0;
 }
