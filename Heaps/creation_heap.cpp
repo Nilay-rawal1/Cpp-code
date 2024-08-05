@@ -11,7 +11,7 @@ class heap{
         heap(){
             arr[0]=-1;
             size=0;
-            
+
         }
 
         void insert(int val){
@@ -44,6 +44,42 @@ class heap{
 
         }
 
+        void deletefromheap(){
+            if(size==0){
+            cout<<"nothing to delete "<<endl;
+            return ;
+            }
+            //step1:put last element int first index
+            arr[1]=arr[size];
+            //step2 remove last element 
+            size--;
+            //take root node to its correct position
+            int i=1;
+            while(i<size){
+                int leftIndex=2*i;
+                int rightIndex=2*i+1;
+                if(leftIndex<size && arr[i]<arr[leftIndex]){
+                    swap(arr[i],arr[leftIndex]);
+                    i=leftIndex;
+
+                }
+                else if(rightIndex<size && arr[i]<arr[rightIndex]){
+                    swap(arr[i],arr[rightIndex]);
+                    i=rightIndex;
+
+
+                }
+                else{
+                    return;
+
+                
+                }
+            }
+
+
+
+        }
+
 
 };
 
@@ -64,7 +100,9 @@ heap h ;
     h.insert(54);
 
     h.print();
-
+    h.deletefromheap();
+    cout<<endl<<"-----after deletion-----"<<endl;
+    h.print();
     return 0;
 
 }
