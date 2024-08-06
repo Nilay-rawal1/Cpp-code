@@ -83,15 +83,17 @@ class heap{
 
 };
 
+
+
 void heapify(int arr[],int n,int i){
     int largest=i;
     int left=2*i;
     int right=2*i+1;
-    if(left<n && arr[largest]<arr[left]){
+    if(left<=n && arr[largest]<arr[left]){
 
             largest=left;
     }
-    if(right<n &&arr[largest]<arr[right]){
+    if(right<=n &&arr[largest]<arr[right]){
         largest =right;
 
     }
@@ -102,8 +104,25 @@ void heapify(int arr[],int n,int i){
     }
 
 
+
 }
 
+void heapsort(int arr[],int n){
+    int size=n;
+    while(size>1){
+        //step1: swapping
+        swap(arr[size],arr[1]);
+
+     
+        size--;
+           //step2
+        heapify(arr,size,1);
+
+        
+
+        
+    }
+}
 
 
 
@@ -127,11 +146,23 @@ heap h ;
     
     int arrs[6]={-1,54,53,55,53,50};
     int n=5;
+    //heap creation 
+
     for (int i = n/2; i =0; i--)
     {
         heapify(arrs,5,i);
     }
     cout<<"----- printing the array using heapify-----"<<endl;
+    for(int i=1;i<=n;i++){
+        cout<<arrs[i]<<" ";
+
+    }cout<<endl;
+
+
+    //heap sort
+    heapsort(arrs,n);
+
+    cout<<"----- printing the array using heapsort-----"<<endl;
     for(int i=1;i<=n;i++){
         cout<<arrs[i]<<" ";
 
