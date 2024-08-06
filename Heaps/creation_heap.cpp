@@ -168,8 +168,36 @@ heap h ;
 
     }cout<<endl;
 
+//priorty quueue
+
+    cout<<"Using Priority Queue here!"<< endl;
+
+    //maxheap
+
+    priority_queue<int>pq;
+
+    pq.push(4);
+    pq.push(2);
+    pq.push(5);
+
+    pq.push(3);
 
     
-    return 0;
+    cout<<"element at top : "<<pq.top()<<endl;
+
+    pq.pop();
+    cout<<"elements at  2nd Top : "<<pq.top()<<endl;  
+
+    cout<<"size is :"<<pq.size()<<endl;
+    
+    if(pq.empty()){
+        cout<<"qp is empty:";
+    }
+    else{
+        cout<<"Not Empty()";
+
+    }
+      return 0;
+
 
 }
