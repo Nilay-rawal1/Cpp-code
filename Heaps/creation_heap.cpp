@@ -197,6 +197,39 @@ heap h ;
         cout<<"Not Empty()";
 
     }
+    //min heap
+    priority_queue<int,vector<int>,greater<int>>minheap;
+
+    minheap.push(4);
+    minheap.push(2);
+    minheap.push(5);
+    minheap.push(3);
+    
+    cout<<"element at top(MINHEAP) : "<<minheap.top()<<endl;
+
+    pq.pop();
+    cout<<"elements at  2nd Top(MINHEAP) : "<<minheap.top()<<endl;  
+
+    cout<<"(MINHEAP) size is :"<<minheap.size()<<endl;
+    
+    if(minheap.empty()){
+        cout<<"(MINHEAP) is empty:";
+    }
+    else{
+        cout<<"(MINHEAP) Not Empty()";
+
+    }
+
+
+
+
+
+
+
+
+
+
+
       return 0;
 
 
